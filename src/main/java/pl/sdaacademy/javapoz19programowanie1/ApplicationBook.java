@@ -1,8 +1,10 @@
 package pl.sdaacademy.javapoz19programowanie1;
 
+import pl.sdaacademy.javapoz19programowanie1.books.Author;
+import pl.sdaacademy.javapoz19programowanie1.books.Book;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ApplicationBook {
     public static void main(String[] args) {
