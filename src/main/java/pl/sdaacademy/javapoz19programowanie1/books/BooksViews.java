@@ -14,12 +14,25 @@ public class BooksViews {
         System.out.println("1. Authors");
         System.out.println("2. Books");
         System.out.println("0. Koniec");
-        return getDecision();
+        return getDecisionAfterEnter();
 
 
     }
 
-    private int getDecision() {
+
+    public  int getDecision(){
+
+
+        return scanner.nextInt();
+    }
+
+    public  Nation getNation() {
+
+        String nationAsString = scanner.nextLine();
+        return Nation.valueOf(nationAsString);
+
+    }
+    private int getDecisionAfterEnter() {
         int menu = scanner.nextInt();
         scanner.nextLine();
         return menu;
@@ -29,7 +42,9 @@ public class BooksViews {
         authors.stream()
                 .forEach((author -> System.out.println(author)));
         System.out.println("");
-        System.out.println("o, Wroc");
+        System.out.println("1.Find by nation(PL, ENG, USA)");
+        System.out.println("2.Find by after birthYear");
+        System.out.println("0, Wroc");
         return getDecision();
     }
 
