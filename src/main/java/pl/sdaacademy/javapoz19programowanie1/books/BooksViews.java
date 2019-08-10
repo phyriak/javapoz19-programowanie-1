@@ -28,7 +28,7 @@ public class BooksViews {
 
     public  Nation getNation() {
 
-        String nationAsString = scanner.nextLine();
+        String nationAsString = scanner.nextLine().trim();
         return Nation.valueOf(nationAsString);
 
     }
@@ -44,7 +44,7 @@ public class BooksViews {
         System.out.println("");
         System.out.println("1.Find by nation(PL, ENG, USA)");
         System.out.println("2.Find by after birthYear");
-        System.out.println("0, Wroc");
+        System.out.println("0.Wroc");
         return getDecision();
     }
 
