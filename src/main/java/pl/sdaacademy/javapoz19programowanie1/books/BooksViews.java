@@ -20,18 +20,26 @@ public class BooksViews {
     }
 
 
-    public  int getDecision(){
+    public int getDecision() {
 
 
         return scanner.nextInt();
     }
 
-    public  Nation getNation() {
+    public int getBirthYear() {
+        int birthYear = scanner.nextInt();
+        scanner.nextLine();
+        return birthYear;
+    }
+
+
+    public Nation getNation() {
 
         String nationAsString = scanner.nextLine().trim();
         return Nation.valueOf(nationAsString);
 
     }
+
     private int getDecisionAfterEnter() {
         int menu = scanner.nextInt();
         scanner.nextLine();

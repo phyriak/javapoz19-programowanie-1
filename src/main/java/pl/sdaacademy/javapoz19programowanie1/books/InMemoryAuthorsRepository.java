@@ -26,6 +26,14 @@ private List<Author> authors;
                .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Author> findAfterBirthYear(Integer birthyear) {
+        return authors.stream()
+                .filter(author -> author.getBirthyear()>=birthyear)
+                .collect(Collectors.toList());
+
+    }
+
     private void init() {
         authors.add(new Author("Stephen", "King", 1947, Nation.USA));
         authors.add(new Author("Henryk", "Sienkiewicz", 1846, Nation.PL));

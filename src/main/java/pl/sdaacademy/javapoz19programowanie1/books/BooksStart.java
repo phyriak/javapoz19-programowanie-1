@@ -1,12 +1,15 @@
 package pl.sdaacademy.javapoz19programowanie1.books;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class BooksStart {
     private AuthorsRepository authorsRepository;
 
     private BooksViews views;
+
+    //Scanner scanner=new Scanner(System.in);
 
     public BooksStart() {
         this.views = new BooksViews(new Scanner(System.in));
@@ -53,6 +56,13 @@ public class BooksStart {
                     authors=authorsRepository.findByNation(nation);
 
                     break;
+
+                case 2: //findByAfterBirthYear
+                    int birthYear = views.getBirthYear();
+                    authors=authorsRepository.findAfterBirthYear(birthYear);
+
+
+                    break;
                 default:
                     flag = false;
 
@@ -65,4 +75,7 @@ public class BooksStart {
     private void booksView() {
         System.out.println("Tutaj bedą ksiazki");
     }
+
+
+
 }
