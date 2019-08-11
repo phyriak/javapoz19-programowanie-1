@@ -26,5 +26,12 @@ public class BooksService {
         return booksRepository.searchByPhrase(phrase);
     }
 
+
+    public List<Book>searchByAuthor(String authorPhrase){
+
+
+        return booksRepository.searchByAuthor(authorPhrase);
+    }
+
 }
 

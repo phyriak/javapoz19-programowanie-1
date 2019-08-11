@@ -76,4 +76,8 @@ public class Author {
     public void setNation(Nation nation) {
         this.nation = nation;
     }
+
+    public String getFullName() {
+        return firstName+" "+lastName;
+    }
 }

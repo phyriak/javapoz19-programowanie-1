@@ -48,6 +48,8 @@ public class BooksStart {
 
 
         List<Author> authors = authorsRepository.findAll();
+
+
         do {
             int decision = views.authorsMenu(authors);
 
@@ -66,6 +68,8 @@ public class BooksStart {
 
 
                     break;
+
+
                 default:
                     flag = false;
 
@@ -100,7 +104,10 @@ public class BooksStart {
                     break;
 
 
-
+                case 3:
+                    String authorPhrase = views.getPhrase();
+                    books = booksService.searchByAuthor(authorPhrase);
+                    break;
                 default:
                     flag = false;
             }
@@ -108,8 +115,6 @@ public class BooksStart {
 
         } while (flag);
     }
-
-
 
 
 }

@@ -1,7 +1,9 @@
 package pl.sdaacademy.javapoz19programowanie1.books;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -53,14 +55,32 @@ public class InMemoryBooksRepository implements BooksRepository {
 
     @Override
     public List<Book> searchByPhrase(String phrase) {
+
+        return searchByPhraseIn(phrase, book -> book.getTitle());
+    }
+
+    public List<Book> searchByAuthor(String authorPhrase) {
+        return searchByPhraseIn(
+                authorPhrase,
+                book -> book.getAuthor().getFullName()
+        );
+
+    }
+
+
+    private List<Book> searchByPhraseIn(String phrase, Function<Book, String> selector) {
+
         String lowerCasePhrase = phrase.toLowerCase();
         return books.stream()
                 .filter(book -> Stream.of(book)
-                        .map(b -> b.getTitle())
+                        .map(selector)
                         .flatMap(title -> Stream.of(title.split(" ")))
                         .filter(word -> word.length() > 1)
                         .map(word -> word.toLowerCase())
                         .anyMatch(word -> word.startsWith(lowerCasePhrase)))
                 .collect(Collectors.toList());
+
     }
+
 }
+

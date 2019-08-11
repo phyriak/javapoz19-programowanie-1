@@ -11,4 +11,6 @@ public interface BooksRepository {
 
 
     List<Book> searchByPhrase(String phrase);
+
+    List<Book> searchByAuthor(String authorPhrase);
 }
