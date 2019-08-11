@@ -9,11 +9,14 @@ public class BooksStart {
 
     private BooksViews views;
 
+    private BooksService booksService;
+
     //Scanner scanner=new Scanner(System.in);
 
     public BooksStart() {
         this.views = new BooksViews(new Scanner(System.in));
         this.authorsRepository = new InMemoryAuthorsRepository();
+        this.booksService = new BooksService(new InMemoryBooksRepository(authorsRepository));
     }
 
 
@@ -44,7 +47,7 @@ public class BooksStart {
         boolean flag = true;
 
 
-        List<Author> authors =authorsRepository.findAll();
+        List<Author> authors = authorsRepository.findAll();
         do {
             int decision = views.authorsMenu(authors);
 
@@ -53,13 +56,13 @@ public class BooksStart {
                 case 1:
                     Nation nation = views.getNation();
 
-                    authors=authorsRepository.findByNation(nation);
+                    authors = authorsRepository.findByNation(nation);
 
                     break;
 
                 case 2: //findByAfterBirthYear
                     int birthYear = views.getBirthYear();
-                    authors=authorsRepository.findAfterBirthYear(birthYear);
+                    authors = authorsRepository.findAfterBirthYear(birthYear);
 
 
                     break;
@@ -73,8 +76,39 @@ public class BooksStart {
     }
 
     private void booksView() {
-        System.out.println("Tutaj bedą ksiazki");
+        boolean flag = true;
+
+        List<Book> books = booksService.findAll();
+
+        do {
+
+            int decision = views.booksMenu(books);
+            switch (decision) {
+
+                case 1:
+
+                    int releaseYear = views.getReleaseYear();
+                    books = booksService.findByReleaseYear(releaseYear);
+                    break;
+
+                case 2:
+
+
+                    String phrase = views.getPhrase();
+                    books = booksService.searchByPhrase(phrase);
+
+                    break;
+
+
+
+                default:
+                    flag = false;
+            }
+
+
+        } while (flag);
     }
+
 
 
 

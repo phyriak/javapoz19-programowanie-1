@@ -10,4 +10,5 @@ public interface AuthorsRepository {
 
     List <Author> findAfterBirthYear(Integer birthyear);
 
+    List<Book> findByReleaseYear();
 }

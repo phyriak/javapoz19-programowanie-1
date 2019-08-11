@@ -34,6 +34,11 @@ private List<Author> authors;
 
     }
 
+    @Override
+    public List<Book> findByReleaseYear() {
+        return null;
+    }
+
     private void init() {
         authors.add(new Author("Stephen", "King", 1947, Nation.USA));
         authors.add(new Author("Henryk", "Sienkiewicz", 1846, Nation.PL));
