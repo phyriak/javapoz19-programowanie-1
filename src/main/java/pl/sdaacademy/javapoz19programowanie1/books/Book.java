@@ -1,4 +1,6 @@
-package pl.sdaacademy.javapoz19programowanie1;
+package pl.sdaacademy.javapoz19programowanie1.books;
+
+import pl.sdaacademy.javapoz19programowanie1.books.Author;
 
 public class Book {
     private String title;
@@ -54,6 +56,7 @@ public class Book {
                 "title='" + title + '\'' +
                 ", releaseYear=" + releaseYear +
                 ", pages=" + pages +
+                ", author=" + author.getFirstName() +" "+author.getLastName()+
                 '}';
     }
 }

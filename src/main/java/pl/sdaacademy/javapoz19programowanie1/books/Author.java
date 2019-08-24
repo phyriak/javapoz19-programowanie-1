@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie1;
+package pl.sdaacademy.javapoz19programowanie1.books;
 
 import java.util.Objects;
 
@@ -75,5 +75,9 @@ public class Author {
 
     public void setNation(Nation nation) {
         this.nation = nation;
+    }
+
+    public String getFullName() {
+        return firstName+" "+lastName;
     }
 }
