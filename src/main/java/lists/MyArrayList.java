@@ -69,7 +69,6 @@ public class MyArrayList {
             throw new ArrayIndexOutOfBoundsException(index);
         }
 
-
         for (int i = size ; i > index; i--) {
             data[i ] = data[i-1];
 
@@ -79,7 +78,6 @@ public class MyArrayList {
         size++;
 
     }
-
 
     public void add_cloneArray(int index, Integer value) {
         Integer [] newArray =new Integer[data.length+1];

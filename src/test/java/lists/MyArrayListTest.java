@@ -122,8 +122,6 @@ public class MyArrayListTest {
 
         myArrayList.add_replacing(0,0);
 
-
-
         //when
         Assert.assertEquals(6,myArrayList.size());
         Assert.assertEquals((Integer) 0, myArrayList.get(0));
@@ -145,8 +143,6 @@ public class MyArrayListTest {
         myArrayList.add(30);
         myArrayList.add(40);
         myArrayList.add(50);
-
-
         //when
 
         myArrayList.add_replacing(7,70);
@@ -166,13 +162,9 @@ public class MyArrayListTest {
         myArrayList.add(90);
         myArrayList.add(100);
 
-
-
         //when
 
         myArrayList.add_replacing(3,30);
-
-
 
         //when
         Assert.assertEquals(11,myArrayList.size());
@@ -190,11 +182,6 @@ public class MyArrayListTest {
 
     }
 
-    ////////////////
-
-
-
-
     @Test
     public void add_coleArrayElementShouldAddElementToList() {
         // given
@@ -204,12 +191,9 @@ public class MyArrayListTest {
         myArrayList.add(20);
         myArrayList.add(40);
 
-
         //when
 
         myArrayList.add_cloneArray(3,30);
-
-
 
         //when
         Assert.assertEquals(5,myArrayList.size());
@@ -231,12 +215,9 @@ public class MyArrayListTest {
         myArrayList.add(30);
         myArrayList.add(40);
 
-
         //when
 
         myArrayList.add_cloneArray(5,50);
-
-
 
         //when
         Assert.assertEquals(6,myArrayList.size());
@@ -264,7 +245,6 @@ public class MyArrayListTest {
         //when
 
         myArrayList.add_cloneArray(0,0);
-
 
 
         //when
@@ -309,13 +289,9 @@ public class MyArrayListTest {
         myArrayList.add(90);
         myArrayList.add(100);
 
-
-
         //when
 
         myArrayList.add_cloneArray(3,30);
-
-
 
         //when
         Assert.assertEquals(11,myArrayList.size());
