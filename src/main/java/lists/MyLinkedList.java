@@ -23,10 +23,22 @@ public class MyLinkedList {
         }
         size++;
 
+
     }
+    //TODO obsluga pustej listy
+    //TODO obsluga blednego indexu(ArrayIndexOutOfBound)
 
     public int size() {
         return size;
+    }
+
+    public Integer get (int index){
+
+        MyLinkedListItem tmpItem=head;
+        for (int i = 1; i <index ; i++) {
+          tmpItem=tmpItem.nextItem;
+        }
+        return tmpItem.value;
     }
 
     private MyLinkedListItem getLastItem() {
